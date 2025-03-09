@@ -10,6 +10,10 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_LIBRARY_DIRS})
 add_definitions(${OpenCV_DEFINITIONS})
 
+if(CMAKE_BUILD_TYPE STREQUAL "debug")
+    add_definitions(-DMY_IMAGES_PATH_DEBUG)
+endif()
+
 # Find all executables
 file(GLOB project_SRCS src/*.cpp) #src/*.h
 

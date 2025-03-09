@@ -1,6 +1,7 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
+#include <memory>  // std::enable_shared_from_this<Vehicle>
 #include "TrafficObject.h"
 
 // forward declarations to avoid include cycle

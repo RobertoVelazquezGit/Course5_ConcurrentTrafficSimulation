@@ -1,0 +1,3 @@
+/home/roberto/Devcpp/UdacityCpp/Course5_ConcurrentTrafficSimulation/build/CMakeFiles/traffic_simulation.dir
+/home/roberto/Devcpp/UdacityCpp/Course5_ConcurrentTrafficSimulation/build/CMakeFiles/edit_cache.dir
+/home/roberto/Devcpp/UdacityCpp/Course5_ConcurrentTrafficSimulation/build/CMakeFiles/rebuild_cache.dir
