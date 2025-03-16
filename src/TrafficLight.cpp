@@ -45,6 +45,8 @@ void TrafficLight::simulate()
 {
     // FP.2b : Finally, the private method „cycleThroughPhases“ should be started in a thread when the public method „simulate“ is called. To do this, use the thread queue in the base class. 
 }
+*/
+
 
 // virtual function which is executed in a thread
 void TrafficLight::cycleThroughPhases()
@@ -55,4 +57,36 @@ void TrafficLight::cycleThroughPhases()
     // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
 }
 
-*/
+
+// testroberto
+// ToDo estudiar lo de la duracion añadiendo a los txt que ya tengo
+// std::random_device rd;
+//     std::uniform_int_distribution<int> dist(4000,6000); //milisecs 4000 to 6000
+//     double cycle_threshold = dist(rd);
+    
+//     // init stop watch
+//     auto time1 = std::chrono::system_clock::now();
+//     while (true)
+//     {
+//         std::this_thread::sleep_for(std::chrono::milliseconds(1)); //wait 1ms between two cycles
+//         auto time2 = std::chrono::system_clock::now();
+//         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(time2 - time1).count();
+
+//         if (duration > cycle_threshold)
+//         {
+//             if (_currentPhase == TrafficLightPhase::red)
+//             {
+//                 _currentPhase = TrafficLightPhase::green;
+//             }
+//             else 
+//             {
+//                 _currentPhase = TrafficLightPhase::red;
+//             }
+//             // reset for next cycle
+//             time1 = std::chrono::system_clock::now();
+//             //FP.4b
+//             _lightQueue.send(std::move(_currentPhase));
+//         }
+
+//     }
+
