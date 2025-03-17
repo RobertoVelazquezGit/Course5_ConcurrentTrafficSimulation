@@ -59,7 +59,7 @@ private:
   // semantics.
   MessageQueue<TrafficLightPhase> _messages;
 
-  std::condition_variable _condition;
+  std::condition_variable _condition;  
   std::mutex _mutex;
 };
 

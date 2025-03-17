@@ -142,15 +142,14 @@ void Intersection::processVehicleQueue()
     }
 }
 
+/* Rubric Tip: Uncomment the code below to meet the specifications mentioned in the project*/
 bool Intersection::trafficLightIsGreen()
 {
-   // please include this part once you have solved the final project tasks
-   /*
+   // please include this part once you have solved the final project tasks   
    if (_trafficLight.getCurrentPhase() == TrafficLightPhase::green)
        return true;
    else
        return false;
-   */
-
-  return true; // makes traffic light permanently green
+   
+  //return true; // makes traffic light permanently green
 } 
