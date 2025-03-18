@@ -68,13 +68,13 @@ void TrafficLight::cycleThroughPhases() {
   std::random_device rdevice;
   std::uniform_int_distribution<int> unifdist(
       4000, 6000); // random numbers [4000, 6000]
-  double cycle_time_threshold = unifdist(rdevice);
+  const unsigned long cycle_time_threshold = unifdist(rdevice);
 
   auto starttime = std::chrono::system_clock::now();
   while (true) {
     std::this_thread::sleep_for(std::chrono::milliseconds(1)); // wait 1 ms
-    auto endtime = std::chrono::system_clock::now();
-    auto durationtime = std::chrono::duration_cast<std::chrono::milliseconds>(
+    const auto endtime = std::chrono::system_clock::now();
+    const auto durationtime = std::chrono::duration_cast<std::chrono::milliseconds>(
                             endtime - starttime)
                             .count();
     if (durationtime > cycle_time_threshold) {
