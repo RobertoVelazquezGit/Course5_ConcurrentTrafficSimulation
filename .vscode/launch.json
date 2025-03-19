@@ -24,8 +24,18 @@
                     "description": "Habilitar impresión de formato GDB para valores",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
-                }
+                },
+                { "text": "set non-stop on", "description": "Modo no bloqueante", "ignoreFailures": true },
+                { "text": "set target-async on", "description": "Ejecución asíncrona", "ignoreFailures": true },
+                { "text": "set scheduler-locking on", "description": "Ejecutar un solo hilo", "ignoreFailures": true },
+                { "text": "set pagination off", "description": "Evitar paginación en gdb", "ignoreFailures": true },
+                { "text": "thread apply all bt", "description": "Mostrar backtrace de todos los hilos", "ignoreFailures": true }                
             ],
+            "logging": {
+                "engineLogging": true,
+                "trace": true,
+                "traceResponse": true
+            },            
             "preLaunchTask": "my_make_debug", // Es el label de la task.json
             //"miDebuggerPath": "/usr/bin/gdb"  // No hace falta, encuentra al gdb en el PATH
         }
