@@ -3,6 +3,11 @@
 #include <iostream>
 #include <random>
 
+//#define MY_THREAD_ID_DBG 
+#ifdef MY_THREAD_ID_DBG
+#include <sstream>  // ostringstream
+#endif
+
 /* Implementation of class "MessageQueue" */
 
 template <typename T> T MessageQueue<T>::receive() {
@@ -70,6 +75,31 @@ void TrafficLight::cycleThroughPhases() {
       4000, 6000); // random numbers [4000, 6000]
   const unsigned long cycle_time_threshold = unifdist(rdevice);
 
+  #ifdef MY_THREAD_ID_DBG
+// gdb ./traffic_simulation
+// set environment LD_PRELOAD=/lib/x86_64-linux-gnu/libpthread.so.0
+// show environment LD_PRELOAD
+// run
+//   stops at auto starttime, after __asm__
+// info threads
+// print target_id
+// print thread_id_str
+
+  // Break point in a thread id
+  auto this_id = std::this_thread::get_id();
+  std::ostringstream oss;
+  oss << this_id;  // Convert ID to string
+  std::string thread_id_str = oss.str();
+
+  // ID we want to stop (string)
+  std::string target_id = "140737017202368";
+
+  if (thread_id_str == target_id) {
+      std::cout << ">>> Break here. Target thread reached: " << thread_id_str << std::endl;
+      __asm__("int $3");  // To break in gdb
+  }
+  #endif
+  
   auto starttime = std::chrono::system_clock::now();
   while (true) {
     std::this_thread::sleep_for(std::chrono::milliseconds(1)); // wait 1 ms
